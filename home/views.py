@@ -17,7 +17,7 @@ import re
 
 def index(request):
 
-    loaded_model = load_model('/home/kdm1700/Desktop/gitwala/sentiment-analysis-IMDB-Review-using-LSTM/models/LSTM.h5')
+    loaded_model = load_model('/home/kdm1700/Desktop/gitwala/sentiment-analysis-IMDB-Review-using-LSTM/Textpad/models/LSTM.h5')
     english_stops = set(stopwords.words('english'))
     token = Tokenizer(lower=False)
     max_length = 130
@@ -25,9 +25,9 @@ def index(request):
 
     if request.method == 'POST':
 
-        #review = request.POST['review']
+        review = request.POST['review']
 
-        review = "completrly nad movie do not watch it"
+    
 
         regex = re.compile(r'[^a-zA-Z\s]')
         review = regex.sub('', review)
